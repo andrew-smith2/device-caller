@@ -16,7 +16,7 @@ public class App
 {
 
 	public static final String iotHubConnectionString = "HostName=utopiahub1.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=FNtx8vg1ZGwnVGGukV8rf66//C1eL9xIsml+Kon30bQ=";
-	public static final String deviceId = "device2";
+	public static final String deviceId = "device4";
 
 	public static final String methodName = "writeLine";
 	public static final Long responseTimeout = TimeUnit.SECONDS.toSeconds(30);
