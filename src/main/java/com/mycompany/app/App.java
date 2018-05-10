@@ -26,11 +26,10 @@ public class App
     public static void main( String[] args )
     {
         System.out.println("Starting sample...");
-		DeviceMethod methodClient = DeviceMethod.createFromConnectionString(iotHubConnectionString);
-
+        
 		try
 		{
-
+			DeviceMethod methodClient = DeviceMethod.createFromConnectionString(iotHubConnectionString);
 			System.out.println("Invoke direct method");
 			MethodResult result = methodClient.invoke(deviceId, methodName, responseTimeout, connectTimeout, payload);
 
@@ -45,7 +44,11 @@ public class App
 		{
 			System.out.println(e.getMessage());	
 		}
-
+		catch (IOException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
 		System.out.println("Shutting down sample...");
     }
 }
