@@ -22,23 +22,26 @@ public class App
 	public static final Long responseTimeout = TimeUnit.SECONDS.toSeconds(30);
 	public static final Long connectTimeout = TimeUnit.SECONDS.toSeconds(5);
 	public static final String payload = "a line to be written";
-
+	
     public static void main( String[] args )
     {
         System.out.println("Starting sample...");
         
-		try
+        try
 		{
 			DeviceMethod methodClient = DeviceMethod.createFromConnectionString(iotHubConnectionString);
 			System.out.println("Invoke direct method");
-			MethodResult result = methodClient.invoke(deviceId, methodName, responseTimeout, connectTimeout, payload);
-
-			if(result == null)
+			for (int i = 0; i < 10; i++)
 			{
-				throw new IOException("Direct method invoke returns null");
+				MethodResult result = methodClient.invoke(deviceId, methodName, responseTimeout, connectTimeout, payload);
+				
+				if(result == null)
+				{
+					throw new IOException("Direct method invoke returns null");
+				}
+				System.out.println("Status=" + result.getStatus());
+				System.out.println("Payload=" + result.getPayload());
 			}
-			System.out.println("Status=" + result.getStatus());
-			System.out.println("Payload=" + result.getPayload());
 		}
 		catch (IotHubException e)
 		{
