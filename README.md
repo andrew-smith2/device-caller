@@ -2,8 +2,8 @@
 Java backend application to invoke method on a device client
 <br>
 <ul>
-<li>Sets up a calling application that registers with the Azure IoT hub and makes direct method call to a method called getTempFromDevice()</li>
-<li>Takes returned payload from device method which contains a randome number representing a temperature value and displays to the console.</li>
+<li>Sets up a calling application that registers with the Azure IoT hub and makes direct method call to a method on device client</li>
+<li>Takes returned payload from device method which contains a random number representing a temperature value and displays to the console.</li>
 </ul>
 
 Instructions  (You can either work on your laptop and build the solution then deploy to you Raspberry PI or you can develop on the Rapberry PI. The PI will contain JDK and Maven)
