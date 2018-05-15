@@ -1,8 +1,7 @@
 package com.mycompany.app;
 
 /**
- * Device Caller!
- *
+ * Device Caller
  */
  
 import com.microsoft.azure.sdk.iot.service.devicetwin.DeviceMethod;
@@ -16,21 +15,35 @@ import java.util.concurrent.TimeUnit;
  
 public class App 
 {
-
 	public static final String iotHubConnectionString = "HostName=team5hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=iHY9jnKGEPyMXGQc0vKd2iLxFgEhQ8G3OEOqt4Y04lU=";
 	public static final String deviceId = "team5device1";
 
 	public static final String methodName = "writeLine";
 	public static final Long responseTimeout = TimeUnit.SECONDS.toSeconds(30);
 	public static final Long connectTimeout = TimeUnit.SECONDS.toSeconds(5);
-	//public static final String payload = "a line to be written";
 	
-
+	
+	public static class Payload
+	{	
+		public int temp;
+		public Payload() {};
+		
+		public int getTemp()
+		{
+			return this.temp;
+		}
+		
+		public void setTemp(int temperature)
+		{
+			this.temp = temperature;
+		}
+	}
+	
+	
     public static void main( String[] args )
     {
         Payload payload = new Payload();
 		Gson gson = new Gson();
-
 		
 		System.out.println("Starting sample...");
         
@@ -49,7 +62,7 @@ public class App
 					throw new IOException("Direct method invoke returns null");
 				}
 
-				//gets the response payload and binds to payload class
+				// gets the response payload and binds to Payload class
 				String strResult = result.getPayload().toString();
 			    payload = gson.fromJson(strResult, Payload.class);
 	
@@ -68,13 +81,5 @@ public class App
 		
 		System.out.println("Shutting down sample...");
     }
-
-	public static class Payload {
-		
-		public int temp;
-		public Payload(){};
-	}
 	
 }
-
-
