@@ -38,20 +38,18 @@ public class App
 		{
 			DeviceMethod methodClient = DeviceMethod.createFromConnectionString(iotHubConnectionString);
 			System.out.println("Invoke direct method");
-			
-			//initialize counter
-			payload.counter=0;
 				
 			for (int i = 0; i < 10; i++)
 			{
 				
-				MethodResult result = methodClient.invoke(deviceId, methodName, responseTimeout, connectTimeout, gson.toJson(payload));
+				MethodResult result = methodClient.invoke(deviceId, methodName, responseTimeout, connectTimeout, "Get the temp from device.");
 				
 				if(result == null)
 				{
 					throw new IOException("Direct method invoke returns null");
 				}
 
+				//gets the response payload and binds to payload class
 				String strResult = result.getPayload().toString();
 			    payload = gson.fromJson(strResult, Payload.class);
 	
@@ -73,7 +71,7 @@ public class App
 
 	public static class Payload {
 		
-		public int counter;
+		public int temp;
 		public Payload(){};
 	}
 	
