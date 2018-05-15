@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  
 public class App 
 {
-	public static final String iotHubConnectionString = "HostName=team5hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=iHY9jnKGEPyMXGQc0vKd2iLxFgEhQ8G3OEOqt4Y04lU=";
+	public static final String iotHubConnectionString = "{ IOT hub connection string }";
 	public static final String deviceId = "team5device1";
 
 	public static final String methodName = "writeLine";
