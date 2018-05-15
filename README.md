@@ -12,8 +12,9 @@ Instructions  (You can either work on your laptop and build the solution then de
 3. Download and unpack zipped file of application or clone respository using git clone
 4. Open terminal window to the location where the project files are located
 5. Edit the App.java file and update the connection string to the IoT Hub and Device ID with the provided connection string/DeviceID in Hackathon instructions
-6. type "mvn clean package" in the terminal
-7. fix any build errors
-8. type "java -jar target\invoke-direct-method-1.0-SNAPSHOT.jar" to run application
+6. Type <code>mvn clean package</code> in the terminal
+7. Fix any build errors
+8. For Linux type <code>java -jar target/invoke-direct-method-1.0-SNAPSHOT.jar</code> to run application
+   For Windows type <code>java -jar target\invoke-direct-method-1.0-SNAPSHOT.jar</code> to run application
 
 
