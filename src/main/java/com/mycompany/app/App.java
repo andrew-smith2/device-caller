@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class App 
 {
 	public static final String iotHubConnectionString = "{ IOT hub connection string }";
-	public static final String deviceId = "team5device1";
+	public static final String deviceId = "{ device id }";
 
 	public static final String methodName = "writeLine";
 	public static final Long responseTimeout = TimeUnit.SECONDS.toSeconds(30);
