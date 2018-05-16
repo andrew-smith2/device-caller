@@ -8,8 +8,8 @@ Java backend application to invoke method on a device client
 
 Instructions  (You can either work on your laptop and build the solution then deploy to you Raspberry PI or you can develop on the Rapberry PI. The PI will contain JDK and Maven)
 1. Ensure you have JDK and Maven installed on your machine 
-2. Ensure client application is installed and started that is located in the https://github.com/spock75/device-client.git repository
-3. Download and unpack zipped file of application or clone respository using git clone
+2. Ensure client application is installed and started that is located in the https://github.com/spock75/device-client.git repository. If you do not have a client running your will get errors indicating this when you run your app
+3. Download and unpack zipped file of application or clone respository using <code>git clone https://github.com/spock75/device-caller.git</code> from a terminal in the directory where you want to house this app
 4. Open terminal window to the location where the project files are located
 5. Edit the App.java file and update the connection string to the IoT Hub and Device ID with the provided connection string/DeviceID in Hackathon instructions
 6. Type <code>mvn clean package</code> in the terminal
