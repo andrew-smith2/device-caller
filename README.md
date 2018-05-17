@@ -6,7 +6,7 @@ Java backend application to invoke method on a device client
 <li>Takes returned payload from device method which contains a random number representing a temperature value and displays to the console.</li>
 </ul>
 
-Instructions  (You can either work on your laptop and build the solution then deploy to you Raspberry PI or you can develop on the Rapberry PI. The PI will contain JDK and Maven)
+Instructions  
 1. Ensure you have JDK and Maven installed on your machine 
 2. Ensure client application is installed and started that is located in the https://github.com/spock75/device-client.git repository. If you do not have a client running your will get errors indicating this when you run your app
 3. Download and unpack zipped file of application or clone respository using <code>git clone https://github.com/spock75/device-caller.git</code> from a terminal in the directory where you want to house this app
